@@ -107,5 +107,25 @@ namespace CloverConta
             _sMes = "12";
             Close();
         }
+
+        private void btDown_Click(object sender, EventArgs e)
+        {
+            int iYear = 0;
+            if(int.TryParse(txtYear.Text,out iYear))
+            {
+                iYear--;
+                txtYear.Text = iYear.ToString();
+            }
+        }
+
+        private void btUp_Click(object sender, EventArgs e)
+        {
+            int iYear = 0;
+            if (int.TryParse(txtYear.Text, out iYear))
+            {
+                iYear++;
+                txtYear.Text = iYear.ToString();
+            }
+        }
     }
 }

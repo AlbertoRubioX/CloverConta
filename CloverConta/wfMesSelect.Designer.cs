@@ -41,6 +41,8 @@
             this.btMes12 = new System.Windows.Forms.Button();
             this.btMes10 = new System.Windows.Forms.Button();
             this.txtYear = new System.Windows.Forms.TextBox();
+            this.btUp = new System.Windows.Forms.Button();
+            this.btDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btMes1
@@ -200,6 +202,30 @@
             this.txtYear.Text = "2019";
             this.txtYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btUp
+            // 
+            this.btUp.BackgroundImage = global::CloverConta.Properties.Resources.iconfinder_1___Up_1815558;
+            this.btUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUp.Location = new System.Drawing.Point(314, 14);
+            this.btUp.Name = "btUp";
+            this.btUp.Size = new System.Drawing.Size(40, 44);
+            this.btUp.TabIndex = 14;
+            this.btUp.UseVisualStyleBackColor = true;
+            this.btUp.Click += new System.EventHandler(this.btUp_Click);
+            // 
+            // btDown
+            // 
+            this.btDown.BackgroundImage = global::CloverConta.Properties.Resources.iconfinder_2___Down_1815568;
+            this.btDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDown.Location = new System.Drawing.Point(117, 14);
+            this.btDown.Name = "btDown";
+            this.btDown.Size = new System.Drawing.Size(40, 44);
+            this.btDown.TabIndex = 13;
+            this.btDown.UseVisualStyleBackColor = true;
+            this.btDown.Click += new System.EventHandler(this.btDown_Click);
+            // 
             // wfMesSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +233,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(469, 435);
             this.ControlBox = false;
+            this.Controls.Add(this.btUp);
+            this.Controls.Add(this.btDown);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.btMes11);
             this.Controls.Add(this.btMes12);
@@ -244,5 +272,7 @@
         private System.Windows.Forms.Button btMes12;
         private System.Windows.Forms.Button btMes10;
         private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Button btDown;
+        private System.Windows.Forms.Button btUp;
     }
 }

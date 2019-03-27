@@ -22,7 +22,7 @@ namespace Logica
 
         public static int Guardar(BalanDetLogica bal)
         {
-            string[] parametros = { "@Folio", "@Consec", "@Cuenta", "@Nombre", "@SaldoAnt", "@Cargo", "@Movil", "@Saldo", "@Usuario" };
+            string[] parametros = { "@Folio", "@Consec", "@Cuenta", "@Nombre", "@SaldoAnt", "@Cargo", "@Movimiento", "@Saldo", "@Usuario" };
             return AccesoDatos.Actualizar("sp_mant_balandet", parametros, bal.Folio, bal.Consec, bal.Cuenta, bal.Nombre, bal.SaldoAnt, bal.Cargo, bal.Movi, bal.Saldo, bal.Usuario);
         }
 

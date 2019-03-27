@@ -8,21 +8,51 @@ using Datos;
 
 namespace Logica
 {
-    public class BalanzaLogica
+    public class ResultadosLogica
     {
         public long Folio { get; set; }
-        public string Axo { get; set; }
+        public int Axo { get; set; }
         public string Mes { get; set; }
-        public string Cancela { get; set; }
-        public string Usuario { get; set; }
+        public string Area { get; set; }
+        public string Planta { get; set; }
+        public string Clasifica { get; set; }
 
-        public static int Guardar(BalanzaLogica bal)
+        public static DataTable TrialBalance(ResultadosLogica res)
         {
-            string[] parametros = { "@Folio", "@Axo", "@Mes", "@Usuario" };
-            return AccesoDatos.Actualizar("sp_mant_balanza", parametros, bal.Folio, bal.Axo, bal.Mes, bal.Usuario);
+            DataTable datos = new DataTable();
+            try
+            {
+                string[] parametros = { "@Axo", "@Area", "@Planta", "@Clasi" };
+                datos = AccesoDatos.ConsultaSP("sp_mon_balanza_anual", parametros, res.Axo,res.Area,res.Planta,res.Clasifica);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return datos;
         }
 
-        public static DataTable Consultar(BalanzaLogica bal)
+        public static DataTable TrialBalanceTotal(ResultadosLogica res)
+        {
+            DataTable datos = new DataTable();
+            try
+            {
+                string[] parametros = { "@Axo", "@Area", "@Planta", "@Clasi" };
+                datos = AccesoDatos.ConsultaSP("sp_mon_balanza_total", parametros, res.Axo, res.Area, res.Planta, res.Clasifica);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return datos;
+        }
+
+
+
+
+        public static DataTable Consultar(ResultadosLogica bal)
         {
             DataTable datos = new DataTable();
             try
@@ -37,7 +67,7 @@ namespace Logica
             return datos;
         }
 
-        public static bool Verificar(BalanzaLogica bal)
+        public static bool Verificar(ResultadosLogica bal)
         {
             try
             {
@@ -55,7 +85,7 @@ namespace Logica
             }
         }
 
-        public static DataTable ListarAxo(BalanzaLogica bal)
+        public static DataTable ListarAxo(ResultadosLogica bal)
         {
             DataTable datos = new DataTable();
             try
@@ -71,7 +101,7 @@ namespace Logica
         }
 
      
-        public static bool Eliminar(BalanzaLogica bal)
+        public static bool Eliminar(ResultadosLogica bal)
         {
             try
             {
